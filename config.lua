@@ -29,5 +29,13 @@ Config.PedList = {
         model = `U_M_M_VALBUTCHER_01`,
         coords = vector4(-339.26, 767.7, 116.57, 103.16),
     },
-
+    {    -- trapper vendor Valentine 
+        model = `U_M_M_SDTRAPPER_01`,
+        coords = vector4(-333.9737, 773.49157, 116.22194, 111.8759),
+    },
+    {    -- fish vendor Valentine 
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(-335.4444, 762.00537, 116.5845, 45.516292),
+    },
+	
 }
