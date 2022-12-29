@@ -41,5 +41,21 @@ Config.PedList = {
         model = `U_M_M_SDTRAPPER_01`,
         coords = vector4(2832.3193, -1223.699, 47.654289, 190.36814),
     },
-	
+    {    -- trapper vendor Riggs Station 
+        model = `U_M_M_SDTRAPPER_01`,
+        coords = vector4(-1007.607, -549.5084, 99.39138, 282.4226),
+    },
+    {    -- trapper vendor West Elizabeth 
+        model = `U_M_M_SDTRAPPER_01`,
+        coords = vector4(-2844.197, 142.13876, 184.61907, 255.25524),
+    },
+    {    -- trapper vendor Stawberry 
+        model = `U_M_M_SDTRAPPER_01`,
+        coords = vector4(-1745.992, -388.9831, 156.59568, 107.79673),
+    },
+    {    -- trapper vendor Tumbleweed 
+        model = `U_M_M_SDTRAPPER_01`,
+        coords = vector4(-5511.721, -2951.048, -1.83548, 165.87483),
+    },
+
 }
