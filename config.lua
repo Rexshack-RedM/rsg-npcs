@@ -37,5 +37,9 @@ Config.PedList = {
         model = `CS_FISHCOLLECTOR`,
         coords = vector4(-335.4444, 762.00537, 116.5845, 45.516292),
     },
+    {    -- trapper vendor Saint Denis 
+        model = `U_M_M_SDTRAPPER_01`,
+        coords = vector4(2832.3193, -1223.699, 47.654289, 190.36814),
+    },
 	
 }
