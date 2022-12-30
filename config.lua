@@ -2,33 +2,10 @@ Config = {}
 
 -- settings
 Config.DistanceSpawn = 20.0 -- Distance before spawning/despawning the ped. (GTA Units.)
+Config.FadeIn = true
 
 Config.PedList = {
 
-    {    -- gunsmith Valentine 
-        model = `U_M_M_ValGunsmith_01`,
-        coords = vector4(-281.25, 778.88, 119.5, 0.0),
-    },
-    {    -- doctor Valentine 
-        model = `U_M_M_ValDoctor_01`,
-        coords = vector4(-288.04, 804.16, 119.39, 270.0),
-    },
-    {    -- trainstation worker Valentine 
-        model = `S_M_M_TrainStationWorker_01`,
-        coords = vector4(-175, 631.88, 114.09, 323.0),
-    },
-    {    -- trainstation worker Valentine 
-        model = `S_M_M_TrainStationWorker_01`,
-        coords = vector4(-177.94, 628.09, 114.09, 154.0),
-    },
-    {    -- general store Valentine 
-        model = `U_M_M_ValGenStoreOwner_01`,
-        coords = vector4(-324.14, 803.54, 117.88, 277.0),
-    },
-    {    -- fish vendor Valentine 
-        model = `CS_FISHCOLLECTOR`,
-        coords = vector4(-335.4444, 762.00537, 116.5845, 45.516292),
-    },
 	-- trappers
     {    -- trapper vendor Valentine 
         model = `U_M_M_SDTRAPPER_01`,
@@ -95,5 +72,42 @@ Config.PedList = {
         model = `U_M_M_VALBUTCHER_01`,
         coords = vector4(-1007.92, -541.2982, 99.108978, 281.41009),
     },
-
+	-- fish vendor
+    {    -- fish vendor Valentine 
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(-335.4444, 762.00537, 116.5845, 45.516292),
+    },
+    {    -- fish vendor Saint Denis 
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(2661.7463, -1506.055, 45.968948, 321.56686),
+    },
+    {    -- fish vendor Rhodes
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(1292.9885, -1273.963, 75.870391, 181.20063),
+    },
+    {    -- fish vendor Annesburg
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(3018.2368, 1352.096, 42.713443, 23.409223),
+    },
+    {    -- fish vendor Van Horn
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(2991.539, 558.93402, 44.357906, 4.9385623),
+    },
+    {    -- fish vendor Van Horn
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(2991.539, 558.93402, 44.357906, 4.9385623),
+    },
+    {    -- fish vendor Blackwater
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(-723.9387, -1254.361, 44.734092, 49.674472),
+    },
+    {    -- fish vendor Tumbleweed
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(-5513.404, -2944.167, -2.001027, 29.520355),
+    },
+    {    -- fish vendor Tumbleweed
+        model = `CS_FISHCOLLECTOR`,
+        coords = vector4(-1452.24, -2684.517, 41.256187, 221.86631),
+    },
+	
 }
