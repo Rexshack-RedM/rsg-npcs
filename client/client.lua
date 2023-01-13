@@ -38,6 +38,14 @@ function NearPed(model, coords)
     SetEntityInvincible(spawnedPed, true)
     FreezeEntityPosition(spawnedPed, true)
     SetBlockingOfNonTemporaryEvents(spawnedPed, true)
+    -- set relationship group between npc and player
+    Citizen.InvokeNative(0xC80A74AC829DDD92, spawnedPed, GetPedRelationshipGroupHash(spawnedPed)) -- SetPedRelationshipGroupHash
+    Citizen.InvokeNative(0xBF25EB89375A37AD, 1, GetPedRelationshipGroupHash(spawnedPed), `PLAYER`) -- SetRelationshipBetweenGroups
+    if Config.Debug then
+        local relationship = Citizen.InvokeNative(0x9E6B70061662AE5C, GetPedRelationshipGroupHash(spawnedPed), `PLAYER`) -- GetRelationshipBetweenGroups
+        print(relationship)
+    end
+    -- end of relationship group
     if Config.FadeIn then
         for i = 0, 255, 51 do
             Citizen.Wait(50)
