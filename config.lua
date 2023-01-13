@@ -111,5 +111,16 @@ Config.PedList = {
         model = `CS_FISHCOLLECTOR`,
         coords = vector4(-1452.24, -2684.517, 41.256187, 221.86631),
     },
-	
+    {    -- vendor Valentine
+        model = `A_M_M_BLWObeseMen_01`,
+        coords = vector4(-355.8251, 774.5346, 116.28136, 357.04873),
+    },
+    {    -- pet vendor Valentine
+        model = `A_F_M_BTCObeseWomen_01`,
+        coords = vector4(-360.5959, 784.40875, 116.1548, 254.57247),
+    },
+    {    -- cart hire Valentine
+        model = `A_M_M_deliverytravelers_warm_01`,
+        coords = vector4(-360.2623, 802.67987, 116.25743, 235.24334),
+    },
 }
