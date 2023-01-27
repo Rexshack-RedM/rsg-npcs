@@ -151,4 +151,16 @@ Config.PedList = {
         model = `A_M_M_deliverytravelers_warm_01`,
         coords = vector4(-5512.877, -2929.122, -2.324135, 168.93939),
     },
+    {    -- barber Valentine
+        model = `s_m_m_barber_01`,
+        coords = vector4(-307.96, 814.16, 118.99, 190.93),
+    },
+    {    -- barber Saint Denis
+        model = `s_m_m_barber_01`,
+        coords = vector4(2656.16, -1180.87, 53.28, 176.33),
+    },
+    {    -- barber Blackwater
+        model = `s_m_m_barber_01`,
+        coords = vector4(-815.88, -1364.72, 43.75, 268.01),
+    },
 }
