@@ -163,4 +163,24 @@ Config.PedList = {
         model = `s_m_m_barber_01`,
         coords = vector4(-815.88, -1364.72, 43.75, 268.01),
     },
+    {    -- estate agent New Hanover
+        model = `A_M_O_SDUpperClass_01`,
+        coords = vector4(-250.8893, 743.20239, 118.08129, 105.66469),
+    },
+    {    -- estate agent West Elizabeth
+        model = `A_M_O_SDUpperClass_01`,
+        coords = vector4(-792.3216, -1203.232, 43.645206, 184.15261),
+    },
+    {    -- estate agent New Austin
+        model = `A_M_O_SDUpperClass_01`,
+        coords = vector4(-3658.934, -2620.835, -13.3414, 8.4051847),
+    },
+    {    -- estate agent Ambarino
+        model = `A_M_O_SDUpperClass_01`,
+        coords = vector4(-1347.746, 2405.7084, 307.06127, 296.02886),
+    },
+    {    -- estate agent Lemoyne
+        model = `A_M_O_SDUpperClass_01`,
+        coords = vector4(2596.5463, -1299.845, 52.817153, 304.04638),
+    },
 }
