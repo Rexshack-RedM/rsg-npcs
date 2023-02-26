@@ -115,6 +115,10 @@ Config.PedList = {
         model = `A_M_M_BLWObeseMen_01`,
         coords = vector4(-355.8251, 774.5346, 116.28136, 357.04873),
     },
+    {    -- vendor Mining
+        model = `A_M_M_BLWObeseMen_01`,
+        coords = vector4(2435.36, -1511.59, 45.97, 284.36),
+    },
     {    -- pet vendor Valentine
         model = `A_F_M_BTCObeseWomen_01`,
         coords = vector4(-360.5959, 784.40875, 116.1548, 254.57247),
