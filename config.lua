@@ -211,4 +211,8 @@ Config.PedList = {
         model = `A_M_M_SDDockForeman_01`,
         coords = vector4(-5529.143, -2932.52, -1.95342, 212.60365),
     },
+    {   -- delivery Oil Fields
+        model = `U_M_M_HtlForeman_01`,
+        coords = vector4(444.06781, 695.92626, 116.71598, 91.313453),
+    },
 }
