@@ -8,7 +8,7 @@ Config.FadeIn = true
 
 Config.PedList = {
 
-	-- trappers
+    -- trappers
     {    -- trapper vendor Valentine 
         model = `U_M_M_SDTRAPPER_01`,
         coords = vector4(-333.9737, 773.49157, 116.22194, 111.8759),
@@ -33,7 +33,7 @@ Config.PedList = {
         model = `U_M_M_SDTRAPPER_01`,
         coords = vector4(-5511.721, -2951.048, -1.83548, 165.87483),
     },
-	-- butchers
+    -- butchers
     {    -- butcher Valentine 
         model = `U_M_M_VALBUTCHER_01`,
         coords = vector4(-339.26, 767.7, 116.57, 103.16),
@@ -74,7 +74,7 @@ Config.PedList = {
         model = `U_M_M_VALBUTCHER_01`,
         coords = vector4(-1007.92, -541.2982, 99.108978, 281.41009),
     },
-	-- fish vendor
+    -- fish vendor
     {    -- fish vendor Valentine 
         model = `CS_FISHCOLLECTOR`,
         coords = vector4(-335.4444, 762.00537, 116.5845, 45.516292),
@@ -214,5 +214,9 @@ Config.PedList = {
     {   -- delivery Oil Fields
         model = `U_M_M_HtlForeman_01`,
         coords = vector4(444.06781, 695.92626, 116.71598, 91.313453),
+    },
+    {   -- railroad job npc
+        model = `U_M_O_RigTrainStationWorker_01`,
+        coords = vector4(-162.6976, 638.8612, 114.03211, 146.25543),
     },
 }
