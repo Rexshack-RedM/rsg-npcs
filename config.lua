@@ -123,38 +123,6 @@ Config.PedList = {
         model = `A_F_M_BTCObeseWomen_01`,
         coords = vector4(-360.5959, 784.40875, 116.1548, 254.57247),
     },
-    {    -- cart hire Valentine
-        model = `A_M_M_deliverytravelers_warm_01`,
-        coords = vector4(-360.2623, 802.67987, 116.25743, 235.24334),
-    },
-    {    -- cart hire Rhodes
-        model = `A_M_M_deliverytravelers_warm_01`,
-        coords = vector4(1326.7335, -1348.217, 78.428489, 177.17704),
-    },
-    {    -- cart hire St Denis
-        model = `A_M_M_deliverytravelers_warm_01`,
-        coords = vector4(2497.8732, -1445.853, 46.326705, 101.40583),
-    },
-    {    -- cart hire Van Horn
-        model = `A_M_M_deliverytravelers_warm_01`,
-        coords = vector4(2983.5461, 589.39678, 44.163356, 158.38249),
-    },
-    {    -- cart hire Annesburg
-        model = `A_M_M_deliverytravelers_warm_01`,
-        coords = vector4(2984.8789, 1421.6295, 44.900459, 176.77442),
-    },
-    {    -- cart hire Strawberry
-        model = `A_M_M_deliverytravelers_warm_01`,
-        coords = vector4(-1779.504, -441.5331, 155.0613, 89.00061),
-    },
-    {    -- cart hire Armadillo
-        model = `A_M_M_deliverytravelers_warm_01`,
-        coords = vector4(-3676.43, -2605.17, -13.72507, 170.74371),
-    },
-    {    -- cart hire Tumbleweed
-        model = `A_M_M_deliverytravelers_warm_01`,
-        coords = vector4(-5512.877, -2929.122, -2.324135, 168.93939),
-    },
     {    -- barber Valentine
         model = `s_m_m_barber_01`,
         coords = vector4(-307.96, 814.16, 118.99, 190.93),
@@ -218,5 +186,9 @@ Config.PedList = {
     {   -- railroad job npc
         model = `U_M_O_RigTrainStationWorker_01`,
         coords = vector4(-162.6976, 638.8612, 114.03211, 146.25543),
+    },
+    {   -- blacksmith shop Valentine 
+        model = `cs_nils`,
+        coords = vector4(-364.1691, 799.62487, 116.25514, 250.88192),
     },
 }
