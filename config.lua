@@ -191,4 +191,13 @@ Config.PedList = {
         model = `cs_nils`,
         coords = vector4(-364.1691, 799.62487, 116.25514, 250.88192),
     },
+    {   -- travel agent St Denis
+        model = `u_m_o_rigtrainstationworker_01`,
+        coords = vector4(2662.3156, -1541.951, 45.969783, 265.44274),
+    },
+    {   -- travel agent Guarma
+        model = `u_m_o_rigtrainstationworker_01`,
+        coords = vector4(1268.4835, -6850.459, 43.318496, 212.38269),
+    },
+
 }
