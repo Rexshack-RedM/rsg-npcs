@@ -4,13 +4,18 @@ game 'rdr3'
 
 author 'RexShack#3041'
 description 'rsg-npcs'
+version '1.0.0'
+
+shared_scripts {
+    'config.lua'
+}
 
 client_scripts {
     'client/client.lua'
 }
 
-shared_scripts {
-    'config.lua'
+server_scripts {
+    'server/server.lua'
 }
 
 dependency 'rsg-core'
