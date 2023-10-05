@@ -4,7 +4,7 @@ game 'rdr3'
 
 author 'RexShack#3041'
 description 'rsg-npcs'
-version '1.0.0'
+version '1.0.1'
 
 shared_scripts {
     'config.lua'
