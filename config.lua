@@ -225,4 +225,30 @@ Config.PedList = {
         coords = vector4(855.49353, -1892.614, 44.397026, 219.83865),
     },
 
+    -- ranch npcs
+    {   -- Macfarlane Ranch boss menu
+        model = `A_M_M_RANCHER_01`,
+        coords = vector4(-2375.171, -2374.125, 62.37881, 194.37658),
+    },
+    {   -- Macfarlane Ranch ranch shop
+        model = `A_M_M_RANCHER_01`,
+        coords = vector4(-2367.547, -2387.013, 62.176456, 5.2386674),
+    },
+    {   -- Pronghorn Ranch boss menu
+        model = `A_M_M_RANCHER_01`,
+        coords = vector4(-2568.169, 353.48822, 151.47889, 358.87481),
+    },
+    {   -- Pronghorn Ranch ranch shop
+        model = `A_M_M_RANCHER_01`,
+        coords = vector4(-2560.69, 402.01995, 148.22892, 95.87107),
+    },
+    {   -- ranch dealer amadillo
+        model = `A_M_M_RANCHER_01`,
+        coords = vector4(-3676.736, -2556.874, -13.57845, 272.95428),
+    },
+    {   -- ranch dealer stawberry
+        model = `A_M_M_RANCHER_01`,
+        coords = vector4(-1772.601, -434.5156, 155.08004, 111.57814),
+    },
+
 }
