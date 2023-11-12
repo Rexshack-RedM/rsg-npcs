@@ -250,5 +250,13 @@ Config.PedList = {
         model = `A_M_M_RANCHER_01`,
         coords = vector4(-1772.601, -434.5156, 155.08004, 111.57814),
     },
+    {   -- hunting camp 1
+        model = `casp_hunting02_males_01`,
+        coords = vector4(181.16, 340.88, 120.62, 153.50),
+    },
+    {   -- hunting camp 2
+        model = `casp_hunting02_males_01`,
+        coords = vector4(2137.70, -631.67, 42.72, 320.75),
+    },
 
 }
