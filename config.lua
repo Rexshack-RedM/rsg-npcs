@@ -183,10 +183,6 @@ Config.PedList = {
         model = `U_M_M_HtlForeman_01`,
         coords = vector4(444.06781, 695.92626, 116.71598, 91.313453),
     },
-    {   -- railroad job npc
-        model = `U_M_O_RigTrainStationWorker_01`,
-        coords = vector4(-162.6976, 638.8612, 114.03211, 146.25543),
-    },
     {   -- blacksmith shop Valentine 
         model = `cs_nils`,
         coords = vector4(-364.1691, 799.62487, 116.25514, 250.88192),
