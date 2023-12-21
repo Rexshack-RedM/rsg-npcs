@@ -256,11 +256,9 @@ Config.PedList = {
     },
 
     --Misc
-    {   -- Valentine Townhall
-    model = `CS_gavin`,
-    coords = vector4(-262.87, 761.80, 118.16, 292.38),
-}
-
-
+    {   -- valentine townhall
+        model = `CS_gavin`,
+        coords = vector4(-262.87, 761.80, 118.16, 292.38),
+    },
 
 }
