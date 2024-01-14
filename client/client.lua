@@ -54,3 +54,12 @@ function NearPed(model, coords)
     end
     return spawnedPed
 end
+
+-- cleanup
+AddEventHandler("onResourceStop", function(resourceName)
+    if GetCurrentResourceName() ~= resourceName then return end
+    for k,v in pairs(spawnedPeds) do
+        DeletePed(spawnedPeds[k].spawnedPed)
+        spawnedPeds[k] = nil
+    end
+end)
