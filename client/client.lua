@@ -1,10 +1,10 @@
 local spawnedPeds = {}
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         Wait(500)
         for k,v in pairs(Config.PedList) do
-            local playerCoords = GetEntityCoords(cache.ped)
+            local playerCoords = GetEntityCoords(PlayerPedId())
             local distance = #(playerCoords - v.coords.xyz)
 
             if distance < Config.DistanceSpawn and not spawnedPeds[k] then
