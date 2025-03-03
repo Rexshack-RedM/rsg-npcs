@@ -38,14 +38,7 @@ function NearPed(model, coords)
     SetEntityInvincible(spawnedPed, true)
     FreezeEntityPosition(spawnedPed, true)
     SetBlockingOfNonTemporaryEvents(spawnedPed, true)
-    -- set relationship group between npc and player
-    SetPedRelationshipGroupHash(spawnedPed, GetPedRelationshipGroupHash(spawnedPed))
-    SetRelationshipBetweenGroups(1, GetPedRelationshipGroupHash(spawnedPed), `PLAYER`)
-    if Config.Debug then
-        local relationship = GetRelationshipBetweenGroups(GetPedRelationshipGroupHash(spawnedPed), `PLAYER`)
-        print(relationship)
-    end
-    -- end of relationship group
+    SetPedCanBeTargetted(spawnedPed, false)
     if Config.FadeIn then
         for i = 0, 255, 51 do
             Wait(50)
