@@ -10,257 +10,311 @@ Config.PedList = {
 
 --the ones below are for external scripts, but can use as a template.
 
-    -- -- trappers
-    -- {    -- trapper vendor Valentine 
+    -- Trapper vendors
+    -- {   -- trapper vendor Valentine 
     --     model = `U_M_M_SDTRAPPER_01`,
     --     coords = vector4(-333.9737, 773.49157, 116.22194, 111.8759),
+    --     showblip = false,
+    --     blipName = 'Trapper Vendor Valentine',
+    --     blipSprite = 'blip_shop_animal_trapper',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- trapper vendor Saint Denis 
+    -- {   -- trapper vendor Saint Denis 
     --     model = `U_M_M_SDTRAPPER_01`,
     --     coords = vector4(2832.3193, -1223.699, 47.654289, 190.36814),
+    --     showblip = false,
+    --     blipName = 'Trapper Vendor Saint Denis',
+    --     blipSprite = 'blip_shop_animal_trapper',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- trapper vendor Riggs Station 
+    -- {   -- trapper vendor Riggs Station 
     --     model = `U_M_M_SDTRAPPER_01`,
     --     coords = vector4(-1007.607, -549.5084, 99.39138, 282.4226),
+    --     showblip = false,
+    --     blipName = 'Trapper Vendor Riggs Station',
+    --     blipSprite = 'blip_shop_animal_trapper',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- trapper vendor West Elizabeth 
+    -- {   -- trapper vendor West Elizabeth 
     --     model = `U_M_M_SDTRAPPER_01`,
     --     coords = vector4(-2844.197, 142.13876, 184.61907, 255.25524),
+    --     showblip = false,
+    --     blipName = 'Trapper Vendor West Elizabeth',
+    --     blipSprite = 'blip_shop_animal_trapper',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- trapper vendor Stawberry 
+    -- {   -- trapper vendor Strawberry 
     --     model = `U_M_M_SDTRAPPER_01`,
     --     coords = vector4(-1745.992, -388.9831, 156.59568, 107.79673),
+    --     showblip = false,
+    --     blipName = 'Trapper Vendor Strawberry',
+    --     blipSprite = 'blip_shop_animal_trapper',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- trapper vendor Tumbleweed 
+    -- {   -- trapper vendor Tumbleweed 
     --     model = `U_M_M_SDTRAPPER_01`,
     --     coords = vector4(-5511.721, -2951.048, -1.83548, 165.87483),
+    --     showblip = false,
+    --     blipName = 'Trapper Vendor Tumbleweed',
+    --     blipSprite = 'blip_shop_animal_trapper',
+    --     blipScale = 0.2,
     -- },
-    -- -- butchers
-    -- {    -- butcher Valentine 
+
+    -- Butcher vendors
+    -- {   -- butcher Valentine 
     --     model = `U_M_M_VALBUTCHER_01`,
     --     coords = vector4(-339.26, 767.7, 116.57, 103.16),
+    --     showblip = false,
+    --     blipName = 'Butcher Vendor Valentine',
+    --     blipSprite = 'blip_shop_butcher',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- butcher Saint Denis
+    -- {   -- butcher Saint Denis
     --     model = `U_M_M_VALBUTCHER_01`,
     --     coords = vector4(2817.6848, -1323.25, 46.607814, 54.587085),
+    --     showblip = false,
+    --     blipName = 'Butcher Vendor Saint Denis',
+    --     blipSprite = 'blip_shop_butcher',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- butcher Rhodes
+    -- {   -- butcher Rhodes
     --     model = `U_M_M_VALBUTCHER_01`,
     --     coords = vector4(1297.3735, -1277.661, 75.876304, 158.4201),
+    --     showblip = false,
+    --     blipName = 'Butcher Vendor Rhodes',
+    --     blipSprite = 'blip_shop_butcher',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- butcher Annesburg
+    -- {   -- butcher Annesburg
     --     model = `U_M_M_VALBUTCHER_01`,
     --     coords = vector4(2934.1706, 1301.2891, 44.483638, 78.346809),
+    --     showblip = false,
+    --     blipName = 'Butcher Vendor Annesburg',
+    --     blipSprite = 'blip_shop_butcher',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- butcher Tumbleweed
+    -- {   -- butcher Tumbleweed
     --     model = `U_M_M_VALBUTCHER_01`,
     --     coords = vector4(-5509.831, -2947.271, -1.89185, 256.48596),
+    --     showblip = false,
+    --     blipName = 'Butcher Vendor Tumbleweed',
+    --     blipSprite = 'blip_shop_butcher',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- butcher Blackwater
-    --     model = `U_M_M_VALBUTCHER_01`,
-    --     coords = vector4(-753.0086, -1284.84, 43.470008, 267.18395),
-    -- },
-    -- {    -- butcher Strawberry
-    --     model = `U_M_M_VALBUTCHER_01`,
-    --     coords = vector4(-1753.137, -392.8364, 156.24348, 189.32403),
-    -- },
-    -- {    -- butcher Van Horn
-    --     model = `U_M_M_VALBUTCHER_01`,
-    --     coords = vector4(2992.4711, 572.20001, 44.365322, 263.94104),
-    -- },
-    -- {    -- butcher Spider Gorge
-    --     model = `U_M_M_VALBUTCHER_01`,
-    --     coords = vector4(-1356.811, 2420.0056, 307.49148, 301.39794),
-    -- },
-    -- {    -- butcher Riggs Station
-    --     model = `U_M_M_VALBUTCHER_01`,
-    --     coords = vector4(-1007.92, -541.2982, 99.108978, 281.41009),
-    -- },
-    -- -- fish vendor
-    -- {    -- fish vendor Valentine 
+
+    -- Fish vendors
+    -- {   -- fish vendor Valentine 
     --     model = `CS_FISHCOLLECTOR`,
     --     coords = vector4(-335.4444, 762.00537, 116.5845, 45.516292),
+    --     showblip = false,
+    --     blipName = 'Fish Vendor Valentine',
+    --     blipSprite = 'blip_mg_fishing',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- fish vendor Saint Denis 
+    -- {   -- fish vendor Saint Denis 
     --     model = `CS_FISHCOLLECTOR`,
     --     coords = vector4(2661.7463, -1506.055, 45.968948, 321.56686),
+    --     showblip = false,
+    --     blipName = 'Fish Vendor Saint Denis',
+    --     blipSprite = 'blip_mg_fishing',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- fish vendor Rhodes
+    -- {   -- fish vendor Rhodes
     --     model = `CS_FISHCOLLECTOR`,
     --     coords = vector4(1292.9885, -1273.963, 75.870391, 181.20063),
+    --     showblip = false,
+    --     blipName = 'Fish Vendor Rhodes',
+    --     blipSprite = 'blip_mg_fishing',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- fish vendor Annesburg
+    -- {   -- fish vendor Annesburg
     --     model = `CS_FISHCOLLECTOR`,
     --     coords = vector4(3018.2368, 1352.096, 42.713443, 23.409223),
+    --     showblip = false,
+    --     blipName = 'Fish Vendor Annesburg',
+    --     blipSprite = 'blip_mg_fishing',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- fish vendor Van Horn
+    -- {   -- fish vendor Van Horn
     --     model = `CS_FISHCOLLECTOR`,
     --     coords = vector4(2991.539, 558.93402, 44.357906, 4.9385623),
+    --     showblip = false,
+    --     blipName = 'Fish Vendor Van Horn',
+    --     blipSprite = 'blip_mg_fishing',
+    --     blipScale = 0.2,
     -- },
-    -- {    -- fish vendor Van Horn
-    --     model = `CS_FISHCOLLECTOR`,
-    --     coords = vector4(2991.539, 558.93402, 44.357906, 4.9385623),
-    -- },
-    -- {    -- fish vendor Blackwater
-    --     model = `CS_FISHCOLLECTOR`,
-    --     coords = vector4(-723.9387, -1254.361, 44.734092, 49.674472),
-    -- },
-    -- {    -- fish vendor Tumbleweed
-    --     model = `CS_FISHCOLLECTOR`,
-    --     coords = vector4(-5513.404, -2944.167, -2.001027, 29.520355),
-    -- },
-    -- {    -- fish vendor Tumbleweed
-    --     model = `CS_FISHCOLLECTOR`,
-    --     coords = vector4(-1452.24, -2684.517, 41.256187, 221.86631),
-    -- },
-    -- {    -- vendor Valentine
-    --     model = `A_M_M_BLWObeseMen_01`,
-    --     coords = vector4(-355.8251, 774.5346, 116.28136, 357.04873),
-    -- },
-    -- {    -- vendor Mining
-    --     model = `A_M_M_BLWObeseMen_01`,
-    --     coords = vector4(2435.36, -1511.59, 45.97, 284.36),
-    -- },
-    -- {    -- pet vendor Valentine
-    --     model = `A_F_M_BTCObeseWomen_01`,
-    --     coords = vector4(-360.5959, 784.40875, 116.1548, 254.57247),
-    -- },
-    {    -- barber Valentine
+
+    -- Barber NPCs
+    {   -- barber Valentine
         model = `s_m_m_barber_01`,
         coords = vector4(-307.96, 814.16, 118.99, 190.93),
+        showblip = false,
+        blipName = 'Barber Valentine',
+        blipSprite = 'blip_shop_barber',
+        blipScale = 0.2,
     },
-    {    -- barber Saint Denis
+    {   -- barber Saint Denis
         model = `s_m_m_barber_01`,
-        coords = vector4(2656.16, -1180.87, 53.28, 176.33),
+        coords = vector4(-238.6778, 681.152, 112.3342, 176.33),
+        showblip = true,
+        blipName = 'Barber Saint Denis',
+        blipSprite = 'blip_shop_barber',
+        blipScale = 0.2,
     },
-    {    -- barber Blackwater
+    {   -- barber Blackwater
         model = `s_m_m_barber_01`,
-        coords = vector4(-815.88, -1364.72, 43.75, 268.01),
+        coords = vector4(-815.88, -1364.72, 43.75, 268.99),
+        showblip = false,
+        blipName = 'Barber Blackwater',
+        blipSprite = 'blip_shop_barber',
+        blipScale = 0.2,
     },
-    -- {    -- estate agent New Hanover
+    {   -- barber Rhodes
+        model = `s_m_m_barber_01`,
+        coords = vector4(1301.88, -1284.16, 76.89, 179.78),
+        showblip = false,
+        blipName = 'Barber Rhodes',
+        blipSprite = 'blip_shop_barber',
+        blipScale = 0.2,
+    },
+    {   -- barber Strawberry
+        model = `s_m_m_barber_01`,
+        coords = vector4(-1840.97, -395.01, 157.12, 103.46),
+        showblip = false,
+        blipName = 'Barber Strawberry',
+        blipSprite = 'blip_shop_barber',
+        blipScale = 0.2,
+    },
+
+    -- -- Estate Agents
+    -- {   -- estate agent New Hanover
     --     model = `A_M_O_SDUpperClass_01`,
     --     coords = vector4(-250.8893, 743.20239, 118.08129, 105.66469),
+    --     showblip = true,
+    --     blipName = 'Estate Agent New Hanover',
+    --     blipSprite = 'blip_post_office',   
+    --     blipScale = 0.2,
     -- },
-    -- {    -- estate agent West Elizabeth
+    -- {   -- estate agent West Elizabeth
     --     model = `A_M_O_SDUpperClass_01`,
     --     coords = vector4(-792.3216, -1203.232, 43.645206, 184.15261),
+    --     showblip = true,
+    --     blipName = 'Estate Agent West Elizabeth',
+    --     blipSprite = 'blip_post_office',   
+    --     blipScale = 0.2,
     -- },
-    -- {    -- estate agent New Austin
+    -- {   -- estate agent New Austin
     --     model = `A_M_O_SDUpperClass_01`,
     --     coords = vector4(-3658.934, -2620.835, -13.3414, 8.4051847),
+    --     showblip = true,
+    --     blipName = 'Estate Agent New Austin',
+    --     blipSprite = 'blip_post_office',   
+    --     blipScale = 0.2,
     -- },
-    -- {    -- estate agent Ambarino
+    -- {   -- estate agent Ambarino
     --     model = `A_M_O_SDUpperClass_01`,
     --     coords = vector4(-1347.746, 2405.7084, 307.06127, 296.02886),
+    --     showblip = true,
+    --     blipName = 'Estate Agent Ambarino',
+    --     blipSprite = 'blip_post_office',   
+    --     blipScale = 0.2,
     -- },
-    -- {    -- estate agent Lemoyne
+    -- {   -- estate agent Lemoyne
     --     model = `A_M_O_SDUpperClass_01`,
     --     coords = vector4(2596.5463, -1299.845, 52.817153, 304.04638),
+    --     showblip = true,
+    --     blipName = 'Estate Agent Lemoyne',
+    --     blipSprite = 'blip_post_office',   
+    --     blipScale = 0.2,
     -- },
+
+    -- -- Delivery NPCs
     -- {   -- delivery Saint Denis
     --     model = `A_M_M_SDDockForeman_01`,
     --     coords = vector4(2904.1989, -1169.292, 46.112228, 96.722068),
+    --     showblip = true,
+    --     blipName = 'Delivery Saint Denis',
+    --     blipSprite = 'blip_ambient_delivery',   
+    --     blipScale = 0.2,
     -- },
-    -- {   -- delivery Valentine 
+    -- {   -- delivery Valentine
     --     model = `A_M_M_FOREMAN`,
     --     coords = vector4(-339.0577, 814.22424, 116.96039, 125.19566),
+    --     showblip = true,
+    --     blipName = 'Delivery Valentine',
+    --     blipSprite = 'blip_ambient_delivery',   
+    --     blipScale = 0.2,
     -- },
-    -- {   -- delivery Blackwater 
+    -- {   -- delivery Blackwater
     --     model = `A_M_M_FOREMAN`,
     --     coords = vector4(-743.7046, -1218.822, 43.29129, 94.302909),
+    --     showblip = true,
+    --     blipName = 'Delivery Blackwater',
+    --     blipSprite = 'blip_ambient_delivery',   
+    --     blipScale = 0.2,
     -- },
     -- {   -- delivery Strawberry
     --     model = `U_M_M_BiVForeman_01`,
     --     coords = vector4(-1798.899, -425.6275, 156.37739, 352.46316),
+    --     showblip = true,
+    --     blipName = 'Delivery Strawberry',
+    --     blipSprite = 'blip_ambient_delivery',   
+    --     blipScale = 0.2,
     -- },
     -- {   -- delivery Mcfarlands Ranch
     --     model = `U_M_M_BiVForeman_01`,
     --     coords = vector4(-2357.585, -2367.583, 62.18066, 168.52516),
+    --     showblip = true,
+    --     blipName = 'Delivery Mcfarlands Ranch',
+    --     blipSprite = 'blip_ambient_delivery',   
+    --     blipScale = 0.2,
     -- },
     -- {   -- delivery Tumbleweed
     --     model = `A_M_M_SDDockForeman_01`,
     --     coords = vector4(-5529.143, -2932.52, -1.95342, 212.60365),
+    --     showblip = true,
+    --     blipName = 'Delivery Tumbleweed',
+    --     blipSprite = 'blip_ambient_delivery',   
+    --     blipScale = 0.2,
     -- },
-    -- {   -- delivery Oil Fields
-    --     model = `U_M_M_HtlForeman_01`,
-    --     coords = vector4(444.06781, 695.92626, 116.71598, 91.313453),
-    -- },
-    -- {   -- blacksmith shop Valentine 
+
+    -- -- Blacksmith Shop Valentine
+    -- {   -- blacksmith shop Valentine
     --     model = `cs_nils`,
     --     coords = vector4(-364.1691, 799.62487, 116.25514, 250.88192),
+    --     showblip = true,
+    --     blipName = 'Blacksmith Valentine',
+    --     blipSprite = 'blip_shop_blacksmith',   
+    --     blipScale = 0.2,
     -- },
+
+    -- -- Travel Agent
     -- {   -- travel agent St Denis
     --     model = `u_m_o_rigtrainstationworker_01`,
     --     coords = vector4(2662.3156, -1541.951, 45.969783, 265.44274),
+    --     showblip = true,
+    --     blipName = 'Travel Agent St Denis',
+    --     blipSprite = 'blip_mp_travelling_saleswoman',   
+    --     blipScale = 0.2,
     -- },
     -- {   -- travel agent Guarma
     --     model = `u_m_o_rigtrainstationworker_01`,
     --     coords = vector4(1268.4835, -6850.459, 43.318496, 212.38269),
-    -- },
-    -- --beekeepers
-    -- {   -- valentine beekeeper shop
-    --     model = `U_M_M_BiVForeman_01`,
-    --     coords = vector4(-468.2546, 862.86431, 126.88754, 169.2465),
-    -- },
-    -- {   -- strawberry beekeeper shop 
-    --     model = `U_M_M_BiVForeman_01`,
-    --     coords = vector4(-1642.163, -339.113, 172.64041, 145.73445),
-    -- },
-    -- {   -- blackwater beekeeper shop
-    --     model = `U_M_M_BiVForeman_01`,
-    --     coords = vector4(-876.5037, -1087.799, 58.660987, 122.2913),
-    -- },
-    -- {   -- mcfarlanes beekeeper shop
-    --     model = `U_M_M_BiVForeman_01`,
-    --     coords = vector4(-2301.1, -2382.684, 63.184398, 85.783271),
-    -- },
-    -- {   -- rhodes beekeeper
-    --     model = `U_M_M_BiVForeman_01`,
-    --     coords = vector4(1396.6099, -1115.501, 75.171989, 116.12648),
-    -- },
-    -- {   -- braitewaite beekeeper
-    --     model = `U_M_M_BiVForeman_01`,
-    --     coords = vector4(855.49353, -1892.614, 44.397026, 219.83865),
+    --     showblip = true,
+    --     blipName = 'Travel Agent Guarma',
+    --     blipSprite = 'blip_mp_travelling_saleswoman',   
+    --     blipScale = 0.2,
     -- },
 
-    -- -- ranch npcs
-    -- {   -- Macfarlane Ranch boss menu
-    --     model = `A_M_M_RANCHER_01`,
-    --     coords = vector4(-2375.171, -2374.125, 62.37881, 194.37658),
-    -- },
-    -- {   -- Macfarlane Ranch ranch shop
-    --     model = `A_M_M_RANCHER_01`,
-    --     coords = vector4(-2367.547, -2387.013, 62.176456, 5.2386674),
-    -- },
-    -- {   -- Pronghorn Ranch boss menu
-    --     model = `A_M_M_RANCHER_01`,
-    --     coords = vector4(-2568.169, 353.48822, 151.47889, 358.87481),
-    -- },
-    -- {   -- Pronghorn Ranch ranch shop
-    --     model = `A_M_M_RANCHER_01`,
-    --     coords = vector4(-2560.69, 402.01995, 148.22892, 95.87107),
-    -- },
-    -- {   -- ranch dealer amadillo
-    --     model = `A_M_M_RANCHER_01`,
-    --     coords = vector4(-3676.736, -2556.874, -13.57845, 272.95428),
-    -- },
-    -- {   -- ranch dealer stawberry
-    --     model = `A_M_M_RANCHER_01`,
-    --     coords = vector4(-1772.601, -434.5156, 155.08004, 111.57814),
-    -- },
-    -- {   -- hunting camp 1
-    --     model = `casp_hunting02_males_01`,
-    --     coords = vector4(181.16, 340.88, 120.62, 153.50),
-    -- },
-    -- {   -- hunting camp 2
-    --     model = `casp_hunting02_males_01`,
-    --     coords = vector4(2137.70, -631.67, 42.72, 320.75),
-    -- },
 
-    -- --Misc
-    -- {   -- valentine townhall
+    -- -- Misc
+    -- {   -- Valentine townhall
     --     model = `CS_gavin`,
     --     coords = vector4(-262.87, 761.80, 118.16, 292.38),
+    --     showblip = true,
+    --     blipName = 'Valentine Townhall',
+    --     blipSprite = 'blip_town',  
+    --     blipScale = 0.2,
     -- },
 
 }
