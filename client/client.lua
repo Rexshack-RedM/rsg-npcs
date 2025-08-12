@@ -1,4 +1,5 @@
 local spawnedPeds = {}
+local blipEntries = {}
 
 CreateThread(function()
     while true do
@@ -48,11 +49,27 @@ function NearPed(model, coords)
     return spawnedPed
 end
 
+Citizen.CreateThread(function()
+    for k, PedList in pairs(Config.PedList) do
+        if PedList.showblip == true then
+            local PedBlip = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, PedList.coords)
+            SetBlipSprite(PedBlip, joaat(PedList.blipSprite), true)
+            SetBlipScale(PedBlip, PedList.blipScale)
+            Citizen.InvokeNative(0x9CB1A1623062F402, PedBlip, PedList.blipName)
+            blipEntries[#blipEntries + 1] = {PedBlip = PedBlip }
+        end
+    end
+end)
+
+
 -- cleanup
 AddEventHandler("onResourceStop", function(resourceName)
     if GetCurrentResourceName() ~= resourceName then return end
     for k,v in pairs(spawnedPeds) do
         DeletePed(spawnedPeds[k].spawnedPed)
         spawnedPeds[k] = nil
+    end
+    for i = 1, #blipEntries do
+        RemoveBlip(blipEntries[i].PedBlip)
     end
 end)
