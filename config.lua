@@ -152,6 +152,7 @@ Config.PedList = {
         blipName = 'Barber Valentine',
         blipSprite = 'blip_shop_barber',
         blipScale = 0.2,
+        scenario = "WORLD_HUMAN_WRITE_NOTEBOOK" -- Animation here
     },
     {   -- barber Saint Denis
         model = `s_m_m_barber_01`,
