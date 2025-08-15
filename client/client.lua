@@ -9,7 +9,7 @@ CreateThread(function()
             local distance = #(playerCoords - v.coords.xyz)
 
             if distance < Config.DistanceSpawn and not spawnedPeds[k] then
-                local spawnedPed = NearPed(v.model, v.coords)
+                local spawnedPed = NearPed(v.model, v.coords, v)
                 spawnedPeds[k] = { spawnedPed = spawnedPed }
             end
             
@@ -27,7 +27,7 @@ CreateThread(function()
     end
 end)
 
-function NearPed(model, coords)
+function NearPed(model, coords, pedData)
     RequestModel(model)
     while not HasModelLoaded(model) do
         Wait(50)
@@ -40,14 +40,21 @@ function NearPed(model, coords)
     FreezeEntityPosition(spawnedPed, true)
     SetBlockingOfNonTemporaryEvents(spawnedPed, true)
     SetPedCanBeTargetted(spawnedPed, false)
+    -- ADDED: Start scenario if defined
+    if pedData and pedData.scenario then
+        TaskStartScenarioInPlace(spawnedPed, pedData.scenario, 0, true)
+    end
+    
     if Config.FadeIn then
         for i = 0, 255, 51 do
             Wait(50)
             SetEntityAlpha(spawnedPed, i, false)
         end
     end
+    
     return spawnedPed
 end
+
 
 Citizen.CreateThread(function()
     for k, PedList in pairs(Config.PedList) do
