@@ -28,10 +28,8 @@ CreateThread(function()
 end)
 
 function NearPed(model, coords, pedData)
-    RequestModel(model)
-    while not HasModelLoaded(model) do
-        Wait(50)
-    end
+    local model = joaat(model)
+    lib.requestModel(model, 5000)
     spawnedPed = CreatePed(model, coords.x, coords.y, coords.z - 1.0, coords.w, false, false, 0, 0)
     SetEntityAlpha(spawnedPed, 0, false)
     SetRandomOutfitVariation(spawnedPed, true)
@@ -55,8 +53,7 @@ function NearPed(model, coords, pedData)
     return spawnedPed
 end
 
-
-Citizen.CreateThread(function()
+CreateThread(function()
     for k, PedList in pairs(Config.PedList) do
         if PedList.showblip == true then
             local PedBlip = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, PedList.coords)
@@ -67,7 +64,6 @@ Citizen.CreateThread(function()
         end
     end
 end)
-
 
 -- cleanup
 AddEventHandler("onResourceStop", function(resourceName)
