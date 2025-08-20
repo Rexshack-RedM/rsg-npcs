@@ -19,6 +19,15 @@ server_scripts {
     'server/versionchecker.lua'
 }
 
-dependency 'rsg-core'
+files {
+    'sounds/*.ogg',
+    'sounds/*.mp3',
+    'sounds/*.wav'
+}
+
+dependencies {
+    'rsg-core',
+    'xsound' -- Audio dependency
+}
 
 lua54 'yes'
