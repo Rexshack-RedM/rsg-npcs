@@ -1,139 +1,166 @@
-local spawnedPeds = {}
-local blipEntries = {}
--- Audio management tables
-local playingAudio = {}
+local spawnedPeds   = {} -- [index] = { ped = entity, busy = bool }
+local blips         = {}
+local playingAudio  = {} -- [index] = soundName
 local hasPlayedAudio = {}
 
-CreateThread(function()
-    while true do
-        Wait(50) -- Reduced for precise audio detection
-        for k,v in pairs(Config.PedList) do
-            local playerCoords = GetEntityCoords(PlayerPedId())
-            local distance = #(playerCoords - v.coords.xyz)
+local hasXsound = GetResourceState('xsound') ~= 'missing'
+local FADE_STEP, FADE_WAIT = 51, 50
 
-            if distance < Config.DistanceSpawn and not spawnedPeds[k] then
-                local spawnedPed = NearPed(v.model, v.coords, v)
-                spawnedPeds[k] = { spawnedPed = spawnedPed }
-            end
-            
-            if distance >= Config.DistanceSpawn and spawnedPeds[k] then
-                if Config.FadeIn then
-                    for i = 255, 0, -51 do
-                        Wait(50)
-                        SetEntityAlpha(spawnedPeds[k].spawnedPed, i, false)
-                    end
-                end
-                -- Stop audio when NPC despawns
-                if playingAudio[k] then
-                    exports.xsound:Destroy(playingAudio[k])
-                    playingAudio[k] = nil
-                end
-                hasPlayedAudio[k] = false
-                DeletePed(spawnedPeds[k].spawnedPed)
-                spawnedPeds[k] = nil
-            end
-
-            -- Audio management for spawned NPCs
-            if spawnedPeds[k] and v.audio then
-                local audioDistance = v.audioDistance or 5.0
-                local audioStopDistance = v.audioStopDistance or 15.0
-
-                -- Play audio once when entering trigger zone
-                if distance <= audioDistance and not hasPlayedAudio[k] then
-                    hasPlayedAudio[k] = true
-                    
-                    local audioUrl = v.audio[math.random(#v.audio)]
-                    local audioName = "npc_audio_" .. tostring(k)
-                    local volume = v.audioVolume or 1.0
-
-                    exports.xsound:PlayUrlPos(audioName, audioUrl, volume, v.coords.xyz, false)
-                    exports.xsound:Distance(audioName, audioStopDistance)
-                    playingAudio[k] = audioName
-
-                    if Config.Debug then
-                        print("[RSG-NPCs] Audio started for NPC " .. k)
-                    end
-
-                    -- Auto-stop after specified duration
-                    if v.audioDuration then
-                        SetTimeout(v.audioDuration, function()
-                            if playingAudio[k] == audioName then
-                                exports.xsound:Destroy(audioName)
-                                playingAudio[k] = nil
-                            end
-                        end)
-                    end
-                end
-
-                -- Reset trigger when player exits zone
-                if distance > (audioDistance + 2.0) and hasPlayedAudio[k] then
-                    hasPlayedAudio[k] = false
-                end
-
-                -- Stop audio if too far away
-                if distance > audioStopDistance and playingAudio[k] then
-                    exports.xsound:Destroy(playingAudio[k])
-                    playingAudio[k] = nil
-                end
-            else
-                hasPlayedAudio[k] = false
-            end
-        end
-    end
-end)
-
-function NearPed(model, coords, pedData)
-    local model = joaat(model)
-    lib.requestModel(model, 5000)
-    spawnedPed = CreatePed(model, coords.x, coords.y, coords.z - 1.0, coords.w, false, false, 0, 0)
-    SetEntityAlpha(spawnedPed, 0, false)
-    SetRandomOutfitVariation(spawnedPed, true)
-    SetEntityCanBeDamaged(spawnedPed, false)
-    SetEntityInvincible(spawnedPed, true)
-    FreezeEntityPosition(spawnedPed, true)
-    SetBlockingOfNonTemporaryEvents(spawnedPed, true)
-    SetPedCanBeTargetted(spawnedPed, false)
-    -- ADDED: Start scenario if defined
-    if pedData and pedData.scenario then
-        TaskStartScenarioInPlace(spawnedPed, pedData.scenario, 0, true)
-    end
-    
-    if Config.FadeIn then
-        for i = 0, 255, 51 do
-            Wait(50)
-            SetEntityAlpha(spawnedPed, i, false)
-        end
-    end
-    
-    return spawnedPed
+local function debugPrint(...)
+    if Config.Debug then print('[rsg-npcs]', ...) end
 end
 
+local function toHash(model)
+    return type(model) == 'number' and model or joaat(model)
+end
+
+local function fade(ped, from, to)
+    local step = from < to and FADE_STEP or -FADE_STEP
+    for alpha = from, to, step do
+        if not DoesEntityExist(ped) then return end
+        SetEntityAlpha(ped, alpha, false)
+        Wait(FADE_WAIT)
+    end
+    if DoesEntityExist(ped) then
+        if to >= 255 then ResetEntityAlpha(ped) else SetEntityAlpha(ped, to, false) end
+    end
+end
+
+local function stopAudio(k)
+    if playingAudio[k] then
+        if hasXsound then exports.xsound:Destroy(playingAudio[k]) end
+        playingAudio[k] = nil
+    end
+end
+
+local function spawnPed(k, data)
+    local model = toHash(data.model)
+    if not IsModelValid(model) then
+        print(('[rsg-npcs] invalid model for PedList entry %s'):format(k))
+        return
+    end
+
+    spawnedPeds[k] = { busy = true }
+    lib.requestModel(model, 10000)
+
+    local c = data.coords
+    local ped = CreatePed(model, c.x, c.y, c.z - 1.0, c.w, false, false, false, false)
+    SetModelAsNoLongerNeeded(model)
+
+    if not DoesEntityExist(ped) then
+        spawnedPeds[k] = nil
+        return
+    end
+
+    SetRandomOutfitVariation(ped, true)
+    SetEntityCanBeDamaged(ped, false)
+    SetEntityInvincible(ped, true)
+    FreezeEntityPosition(ped, true)
+    SetBlockingOfNonTemporaryEvents(ped, true)
+    SetPedCanBeTargetted(ped, false)
+
+    if data.scenario then
+        TaskStartScenarioInPlace(ped, joaat(data.scenario), 0, true, false, false, false)
+    end
+
+    spawnedPeds[k].ped = ped
+
+    if Config.FadeIn then
+        SetEntityAlpha(ped, 0, false)
+        fade(ped, 0, 255)
+    end
+
+    spawnedPeds[k].busy = false
+    debugPrint('spawned', k)
+end
+
+local function despawnPed(k)
+    local entry = spawnedPeds[k]
+    entry.busy = true
+    stopAudio(k)
+    hasPlayedAudio[k] = false
+
+    if Config.FadeIn then fade(entry.ped, 255, 0) end
+    if DoesEntityExist(entry.ped) then DeletePed(entry.ped) end
+
+    spawnedPeds[k] = nil
+    debugPrint('despawned', k)
+end
+
+local function handleAudio(k, data, distance)
+    if not hasXsound or not data.audio or #data.audio == 0 then return end
+
+    local startDist = data.audioDistance or 5.0
+    local stopDist  = data.audioStopDistance or 15.0
+
+    if distance <= startDist and not hasPlayedAudio[k] then
+        hasPlayedAudio[k] = true
+        stopAudio(k)
+
+        local name = 'rsg_npcs_' .. k
+        exports.xsound:PlayUrlPos(name, data.audio[math.random(#data.audio)], data.audioVolume or 1.0, data.coords.xyz, false)
+        exports.xsound:Distance(name, stopDist)
+        playingAudio[k] = name
+        debugPrint('audio started', k)
+
+        if data.audioDuration then
+            SetTimeout(data.audioDuration, function()
+                if playingAudio[k] == name then stopAudio(k) end
+            end)
+        end
+    elseif distance > startDist + 2.0 then
+        hasPlayedAudio[k] = false
+    end
+
+    if distance > stopDist then stopAudio(k) end
+end
+
+-- main loop: sleeps longer when nothing is near
 CreateThread(function()
-    for k, PedList in pairs(Config.PedList) do
-        if PedList.showblip == true then
-            local PedBlip = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, PedList.coords)
-            SetBlipSprite(PedBlip, joaat(PedList.blipSprite), true)
-            SetBlipScale(PedBlip, PedList.blipScale)
-            Citizen.InvokeNative(0x9CB1A1623062F402, PedBlip, PedList.blipName)
-            blipEntries[#blipEntries + 1] = {PedBlip = PedBlip }
+    while true do
+        local sleep = 1000
+        local playerCoords = GetEntityCoords(cache.ped)
+
+        for k, data in ipairs(Config.PedList) do
+            local distance = #(playerCoords - data.coords.xyz)
+            local entry = spawnedPeds[k]
+
+            if distance < Config.DistanceSpawn then
+                if not entry then
+                    CreateThread(function() spawnPed(k, data) end)
+                elseif not entry.busy then
+                    handleAudio(k, data, distance)
+                end
+                -- poll faster near peds that have audio, so the trigger feels instant
+                sleep = math.min(sleep, data.audio and 100 or 500)
+            elseif entry and not entry.busy then
+                CreateThread(function() despawnPed(k) end)
+            end
+        end
+
+        Wait(sleep)
+    end
+end)
+
+-- blips
+CreateThread(function()
+    for _, data in ipairs(Config.PedList) do
+        if data.showblip then
+            local c = data.coords
+            local blip = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, c.x, c.y, c.z) -- BlipAddForCoords
+            SetBlipSprite(blip, joaat(data.blipSprite or 'blip_ambient_npc'), true)
+            SetBlipScale(blip, data.blipScale or 0.2)
+            Citizen.InvokeNative(0x9CB1A1623062F402, blip, data.blipName or 'NPC') -- SetBlipName
+            blips[#blips + 1] = blip
         end
     end
 end)
 
--- cleanup
-AddEventHandler("onResourceStop", function(resourceName)
-    if GetCurrentResourceName() ~= resourceName then return end
-    -- Stop all playing audio
-    for k, audioName in pairs(playingAudio) do
-        exports.xsound:Destroy(audioName)
+AddEventHandler('onResourceStop', function(resource)
+    if resource ~= GetCurrentResourceName() then return end
+    for k in pairs(playingAudio) do stopAudio(k) end
+    for _, entry in pairs(spawnedPeds) do
+        if entry.ped and DoesEntityExist(entry.ped) then DeletePed(entry.ped) end
     end
-    playingAudio = {}
-    hasPlayedAudio = {}
-    for k,v in pairs(spawnedPeds) do
-        DeletePed(spawnedPeds[k].spawnedPed)
-        spawnedPeds[k] = nil
-    end
-    for i = 1, #blipEntries do
-        RemoveBlip(blipEntries[i].PedBlip)
-    end
+    for i = 1, #blips do RemoveBlip(blips[i]) end
 end)
