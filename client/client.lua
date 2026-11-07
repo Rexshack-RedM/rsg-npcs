@@ -1,3 +1,5 @@
+local RSGCore = exports['rsg-core']:GetCoreObject()
+
 local spawnedPeds   = {} -- [index] = { ped = entity, busy = bool }
 local blips         = {}
 local playingAudio  = {} -- [index] = soundName
@@ -41,7 +43,7 @@ local function spawnPed(k, data)
     end
 
     spawnedPeds[k] = { busy = true }
-    lib.requestModel(model, 10000)
+    RSGCore.Functions.RequestModel(model)
 
     local c = data.coords
     local ped = CreatePed(model, c.x, c.y, c.z - 1.0, c.w, false, false, false, false)
@@ -119,7 +121,7 @@ end
 CreateThread(function()
     while true do
         local sleep = 1000
-        local playerCoords = GetEntityCoords(cache.ped)
+        local playerCoords = GetEntityCoords(PlayerPedId())
 
         for k, data in ipairs(Config.PedList) do
             local distance = #(playerCoords - data.coords.xyz)

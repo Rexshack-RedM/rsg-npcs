@@ -4,18 +4,18 @@
 **Lightweight, distance-based ambient NPC spawner with optional blips, scenarios and proximity audio for RedM.**
 
 ![Platform](https://img.shields.io/badge/platform-RedM-darkred)
-![Version](https://img.shields.io/badge/version-3.0.0-blue)
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
 > Fill towns and custom map areas with static NPCs that only exist when a player is nearby.
-> Fully client-side and config-driven: no database, no server events, no framework calls.
+> Fully client-side and config-driven: no database, no server events, no ox_lib.
 
 ---
 
 ## 🛠️ Dependencies
 | Resource | Required | Purpose |
 |---|---|---|
-| [ox_lib](https://github.com/overextended/ox_lib) | ✅ Yes | Model loading and the cached player ped |
+| [rsg-core](https://github.com/Rexshack-RedM/rsg-core) | ✅ Yes | Model loading (`RSGCore.Functions.RequestModel`) |
 | [xsound](https://github.com/Xogy/xsound) | ⚪ Optional | Proximity audio. If xsound is not running, audio is skipped silently and everything else still works |
 
 ---
@@ -39,7 +39,7 @@
 2. (Optional) Install **xsound** if you want NPC audio.
 3. Add to your `server.cfg` **after** its dependencies:
    ```cfg
-   ensure ox_lib
+   ensure rsg-core
    ensure xsound    # optional, only for NPC audio
    ensure rsg-npcs
    ```
@@ -126,6 +126,11 @@ Config.PedList = {
 | NPC floating or underground | Use ground-level `z` coords (the script subtracts 1.0) |
 | NPC stands still instead of playing the scenario | Check the scenario name is valid for that ped model |
 | No audio | Make sure xsound is started **before** rsg-npcs and the URL or file path is correct |
+
+---
+
+## ☕ Support
+https://buymeacoffee.com/rexshack
 
 ---
 

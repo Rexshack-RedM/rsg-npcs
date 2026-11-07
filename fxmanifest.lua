@@ -4,10 +4,9 @@ game 'rdr3'
 lua54 'yes'
 
 description 'rsg-npcs'
-version '3.0.0'
+version '3.0.1'
 
 shared_scripts {
-    '@ox_lib/init.lua',
     'shared/config.lua'
 }
 
@@ -21,5 +20,5 @@ files {
 }
 
 dependencies {
-    'ox_lib'
+    'rsg-core'
 }
