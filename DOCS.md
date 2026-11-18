@@ -29,3 +29,24 @@ No locales are used (no player-facing text), so `@rsg-core/shared/locale.lua` is
 
 ## Optional
 - `xsound` – proximity audio; detected via `GetResourceState('xsound')`, skipped silently if missing.
+
+<!-- BEGIN AUTO-REFERENCE (generated from the code; re-run the generator instead of editing by hand) -->
+
+## Technical reference
+
+Generated from the source of **rsg-npcs 3.0.1**. Names, arguments and defaults below are read straight from the code.
+
+### Dependencies
+
+`rsg-core`
+
+### Configuration
+
+| Option | Default | Notes |
+|---|---|---|
+| `Config.Debug` | `false` |  |
+| `Config.DistanceSpawn` | `20.0` | Distance before spawning/despawning the ped. (GTA Units.) |
+| `Config.FadeIn` | `true` |  |
+| `Config.PedList` | `table` |  |
+
+<!-- END AUTO-REFERENCE -->
